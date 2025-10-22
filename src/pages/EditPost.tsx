@@ -25,7 +25,7 @@ export const EditPost = () => {
     }
   }, [id, navigate])
 
-  const handleSubmit = (formData: PostFormData) => {
+  const handleSubmit = () => {
     // Since we're using static data, just show success message
     alert("Cập nhật thành công!")
     navigate(`/posts/${id}`)
@@ -78,7 +78,7 @@ export const EditPost = () => {
   return (
     <PostForm
       initialData={initialData}
-      onSubmit={handleSubmit}
+      onSubmit={() => handleSubmit()}
       onCancel={handleCancel}
       submitText="Cập nhật"
       title="Chỉnh sửa bài viết"
